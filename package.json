@@ -1,0 +1,14 @@
+{
+  "name": "@brokfeld/pihole-merge-adlists",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/merge.js",
+  "scripts": {
+    "merge": "node src/merge.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
