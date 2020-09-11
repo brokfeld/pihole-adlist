@@ -2,7 +2,7 @@
 
 git pull
 
-node "./node_modules/.bin/merge"
+node "./src/merge.js"
 
 git add .
 git commit -m "Updated build/adlist.txt"
