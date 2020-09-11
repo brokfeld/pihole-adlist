@@ -23,7 +23,7 @@ const whitelist = require(`${__dirname}/whitelist.js`);
         }
       }
     }
-    console.log(`  ${counter} Domains`);
+    console.log(`  ${counter} domains`);
   }
 
   const domainsSet = new Set(domainsArray);
@@ -34,11 +34,14 @@ const whitelist = require(`${__dirname}/whitelist.js`);
     domainsSet.delete(entry);
   }
 
+  let counter = 0;
   domainsSet.forEach((v) => {
+    counter++;
     domainsText += `${v}\n`;
   });
 
+  console.log(`\nBuild build/adlist.txt ...`);
   await fs.writeFile(`${__dirname}/../build/adlist.txt`, domainsText, { encoding: `utf8` });
-
+  console.log(`  Input ${domainsArray.length} domains -> Output ${counter} domains`);
 })();
 
