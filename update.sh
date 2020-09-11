@@ -1,12 +1,13 @@
 #!/bin/bash
 
-git pull
+cd "$(dirname "$0")"
 
-node "./src/merge.js"
+/bin/git pull
 
-git add .
-git commit -m "Updated build/adlist.txt"
-git push
+/bin/node "./src/merge.js"
 
+/bin/git add .
+/bin/git commit -m "Updated build/adlist.txt"
+/bin/git push
 
 
