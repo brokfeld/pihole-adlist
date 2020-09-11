@@ -1,8 +1,8 @@
-const whitelistEndsWith = [];
+const whitelist = [];
 
 // Google Ads
-whitelistEndsWith.push(`.doubleclick.net`);
-whitelistEndsWith.push(`.googleadservices.com`);
+whitelist.push(`.doubleclick.net`);
+whitelist.push(`.googleadservices.com`);
 whitelist.push(`.dartsearch.net`);
 
-module.exports = whitelistEndsWith;
+module.exports = whitelist;
