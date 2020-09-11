@@ -1,6 +1,7 @@
 const fs = require(`fs`).promises;
 const axios = require(`axios`);
 const lists = require(`${__dirname}/lists.js`);
+const whitelist = require(`${__dirname}/whitelist.js`);
 
 (async () => {
   let domainsText = ``;
@@ -27,6 +28,12 @@ const lists = require(`${__dirname}/lists.js`);
 
   const domainsSet = new Set(domainsArray);
   delete domainsArray;
+
+  for (let i = 0; i < whitelist.length; i++) {
+    const entry = whitelist[i];
+    domainsSet.delete(entry);
+  }
+
   domainsSet.forEach((v) => {
     domainsText += `${v}\n`;
   });
