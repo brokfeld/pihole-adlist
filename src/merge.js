@@ -20,7 +20,7 @@ const whitelist = require(`${__dirname}/whitelist.js`);
         if (line !== ``) {
 
           if(line.includes(` `)){
-            line = line.split(` `)[1];
+            line = line.split(` `)[1].trim();
           }
 
           domainsArray.push(line);
