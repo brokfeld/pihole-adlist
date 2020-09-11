@@ -2,12 +2,11 @@
 
 cd "$(dirname "$0")"
 
-/bin/git pull
+/usr/bin/git pull
 
-/bin/node "./src/merge.js"
+/usr/bin/node "./src/merge.js"
 
-/bin/git add .
-/bin/git commit -m "Updated build/adlist.txt"
-/bin/git push
-
+/usr/bin/git add .
+/usr/bin/git commit -m "Updated build/adlist.txt"
+/usr/bin/git push
 
