@@ -2,9 +2,9 @@
 
 ## Pihole-Adlist
 
-The adlist is updated daily.
-
 `https://raw.githubusercontent.com/brokfeld/pihole-merge-adlists/master/build/adlist.txt`
+
+The merge process runs daily.
 
 ## Setup autoupdate
 
