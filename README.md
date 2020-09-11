@@ -28,6 +28,8 @@ crontab -e
 
 ## Development
 
+### Setup
+
 ```bash
 # Clone repository
 git clone https://github.com/brokfeld/pihole-merge-adlists
@@ -39,3 +41,15 @@ npm i
 # Build build/adlist.txt
 npm run merge
 ```
+
+### Files
+
+* `src/lists.js` → Array of adlists
+* `src/merge.js` → Executes the merge process (`node src/merge.js`)
+  * `build/adlist.txt` → Result of the merge process
+* `src/whitelist.js` → Whitelist (exact match)
+* `src/whitelistEndsWith.js` → Whitelist (ends with match)
+
+# License
+
+[MIT](LICENSE)
