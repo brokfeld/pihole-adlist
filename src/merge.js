@@ -15,9 +15,14 @@ const whitelist = require(`${__dirname}/whitelist.js`);
     const lines = content.data.split(`\n`);
 
     for (let j = 0; j < lines.length; j++) {
-      const line = lines[j].trim();
+      let line = lines[j].trim();
       if (!line.startsWith(`#`)) {
         if (line !== ``) {
+
+          if(line.includes(` `)){
+            line = line.split(` `)[1];
+          }
+
           domainsArray.push(line);
           counter++;
         }
