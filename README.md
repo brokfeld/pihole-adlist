@@ -2,7 +2,7 @@
 
 ## Development
 
-````bash
+```bash
 npm i
 npm run merge
 ```
