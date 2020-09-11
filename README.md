@@ -1,5 +1,9 @@
 # @brokfeld/pihole-merge-adlists
 
+## Adlist
+
+`https://raw.githubusercontent.com/brokfeld/pihole-merge-adlists/master/build/adlist.txt`
+
 ## Development
 
 ```bash
