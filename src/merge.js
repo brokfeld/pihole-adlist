@@ -21,30 +21,28 @@ const whitelistEndsWith = require(`${__dirname}/whitelistEndsWith.js`);
       if (!line.startsWith(`#`)) {
         if (line !== ``) {
 
-          
-
+          // removes trash before and behind the line
           if(line.includes(` `)){
             line = line.split(` `)[1].trim();
           }
 
-
-          // Check Whitelist
-          let whitelist = false;
-          for (let i = 0; i < whitelist.length; i++) {
-            const entry = whitelist[i];
+            // check whitlists
+          let lineInWhitelist = false;
+          for (let k = 0; k < whitelist.length; k++) {
+            const entry = whitelist[k];
             if(line === entry){
-              whitelist = true;
+              lineInWhitelist = true;
               break;
             }
           }
-          for (let i = 0; i < whitelistEndsWith.length; i++) {
-            const entry = whitelistEndsWith[i];
+          for (let k = 0; k < whitelistEndsWith.length; k++) {
+            const entry = whitelistEndsWith[k];
             if(line.endsWith(entry)){
-              whitelist = true;
+              lineInWhitelist = true;
               break;
             }
           }
-          if(!whitelist){
+          if(!lineInWhitelist){
             domainsArray.push(line);
           }
           counter++;
@@ -54,17 +52,20 @@ const whitelistEndsWith = require(`${__dirname}/whitelistEndsWith.js`);
     console.log(`  ${counter} domains`);
   }
 
+  // removes duplicates
   const domainsSet = new Set(domainsArray);
   delete domainsArray;
 
-  let counter = 0;
+  // create adlist
+  let domainsSetLength = 0;
   domainsSet.forEach((v) => {
-    counter++;
+    domainsSetLength++;
     domainsText += `${v}\n`;
   });
 
+  // write adlist
   console.log(`\nBuild build/adlist.txt ...`);
   await fs.writeFile(`${__dirname}/../build/adlist.txt`, domainsText, { encoding: `utf8` });
-  console.log(`  Input ${domainsArray.length} domains -> Output ${counter} domains`);
+  console.log(`  Input ${domainsArray.length} domains -> Output ${domainsSetLength} domains (${domainsArray.length - domainsSetLength} domains removed)`);
 })();
 
