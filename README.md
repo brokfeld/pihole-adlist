@@ -1,10 +1,11 @@
 # @brokfeld/pihole-merge-adlists
 
-## Pihole-Adlist
+## Adlist
+
+The merge process runs daily.
 
 `https://raw.githubusercontent.com/brokfeld/pihole-merge-adlists/master/build/adlist.txt`
 
-The merge process runs daily.
 
 ## Setup autoupdate
 
