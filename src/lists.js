@@ -10,5 +10,6 @@ lists.push(`https://raw.githubusercontent.com/RPiList/specials/master/Blockliste
 lists.push(`https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/Fake-Science`);
 lists.push(`https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/spam.mails`);
 lists.push(`https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/notserious`);
+lists.push(`https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/android-tracking.txt`);
 
 module.exports = lists;
