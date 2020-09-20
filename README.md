@@ -1,11 +1,10 @@
-# @brokfeld/pihole-merge-adlists
+# pihole-adlist
 
-## Adlist
+Thanks for the [Pi-hole](https://pi-hole.net/) project. This repository contains my personal adlist.
 
-The merge process runs daily.
+You can use it via the following url:
 
 `https://raw.githubusercontent.com/brokfeld/pihole-merge-adlists/master/build/adlist.txt`
-
 
 ## Setup autoupdate
 
@@ -15,10 +14,10 @@ git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 git config --global credential.helper store
 
-# Setup pihole-merge-adlists
+# Setup pihole-adlist
 cd
-git clone https://github.com/brokfeld/pihole-merge-adlists
-cd pihole-merge-adlists
+git clone https://github.com/brokfeld/pihole-adlist
+cd pihole-adlist
 npm i
 
 # Start update manually
@@ -26,7 +25,7 @@ npm i
 
 # Setup autoupdate
 crontab -e
-0 5 * * * /home/myuser/pihole-merge-adlists/update.sh
+0 5 * * * /home/myuser/pihole-adlist/update.sh
 ```
 
 ## Development
@@ -35,8 +34,8 @@ crontab -e
 
 ```bash
 # Clone repository
-git clone https://github.com/brokfeld/pihole-merge-adlists
-cd pihole-merge-adlists
+git clone https://github.com/brokfeld/pihole-adlist
+cd pihole-adlist
 
 # Install dependencies
 npm i

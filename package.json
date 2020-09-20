@@ -1,14 +1,14 @@
 {
-  "name": "@brokfeld/pihole-merge-adlists",
+  "name": "@brokfeld/pihole-adlist",
   "version": "1.0.0",
-  "description": "",
+  "description": "My custom adlist",
   "main": "src/merge.js",
   "scripts": {
     "merge": "node src/merge.js"
   },
-  "author": "",
+  "author": "Jens Brokfeld <geofreak.de@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.20.0"
   }
 }
