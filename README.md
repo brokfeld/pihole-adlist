@@ -1,57 +1,17 @@
 # pihole-adlist
 
-Thanks for the [Pi-hole](https://pi-hole.net/) project. This repository contains my personal adlist.
+Thanks for the [Pi-hole project](https://pi-hole.net/). This repository contains my personal adlist.
+
+----
 
 You can use it via the following url:
 
-`https://raw.githubusercontent.com/brokfeld/pihole-merge-adlists/master/build/adlist.txt`
+`https://raw.githubusercontent.com/brokfeld/pihole-adlist/master/build/adlist.txt`
 
-## Setup autoupdate
+----
 
-```bash
-# Setup git
-git config --global user.email "you@example.com"
-git config --global user.name "Your Name"
-git config --global credential.helper store
+[Documentation](docs/README.md)
 
-# Setup pihole-adlist
-cd
-git clone https://github.com/brokfeld/pihole-adlist
-cd pihole-adlist
-npm i
-
-# Start update manually
-./update.sh
-
-# Setup autoupdate
-crontab -e
-0 5 * * * /home/myuser/pihole-adlist/update.sh
-```
-
-## Development
-
-### Setup
-
-```bash
-# Clone repository
-git clone https://github.com/brokfeld/pihole-adlist
-cd pihole-adlist
-
-# Install dependencies
-npm i
-
-# Build build/adlist.txt
-npm run merge
-```
-
-### Files
-
-* `src/lists.js` → Array of adlists
-* `src/merge.js` → Executes the merge process (`node src/merge.js`)
-  * `build/adlist.txt` → Result of the merge process
-* `src/whitelist.js` → Whitelist (exact match)
-* `src/whitelistEndsWith.js` → Whitelist (ends with match)
-
-# License
+## License
 
 [MIT](LICENSE)

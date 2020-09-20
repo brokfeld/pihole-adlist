@@ -1,7 +1,7 @@
 {
   "name": "@brokfeld/pihole-adlist",
   "version": "1.0.0",
-  "description": "My custom adlist",
+  "description": "My personal adlist",
   "main": "src/merge.js",
   "scripts": {
     "merge": "node src/merge.js"
