@@ -1,6 +1,7 @@
 const fs = require(`fs`).promises;
 const axios = require(`axios`);
 const lists = require(`${__dirname}/lists.js`);
+const blacklist = require(`${__dirname}/blacklist.js`);
 const whitelist = require(`${__dirname}/whitelist.js`);
 const whitelistEndsWith = require(`${__dirname}/whitelistEndsWith.js`);
 
@@ -51,6 +52,9 @@ const whitelistEndsWith = require(`${__dirname}/whitelistEndsWith.js`);
     }
     console.log(`  ${counter} domains`);
   }
+
+  // add blacklist
+  domainsArray.push(...blacklist);
 
   // removes duplicates
   const domainsSet = new Set(domainsArray);
