@@ -40,6 +40,7 @@ npm run merge
 
 ### Files
 
+* `src/blacklist.js` → Blacklist (exact match)
 * `src/lists.js` → Array of adlists
 * `src/merge.js` → Executes the merge process (`node src/merge.js`)
   * `build/adlist.txt` → Result of the merge process
