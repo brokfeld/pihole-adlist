@@ -1,6 +1,6 @@
 const blacklist = [];
 
 blacklist.push(`googleads.g.doubleclick.net`);
-//blacklist.push(`insight.adsrvr.org`);
+blacklist.push(`adclick.g.doubleclick.net`);
 
 module.exports = blacklist;
