@@ -1,7 +1,7 @@
 const lists = [];
 
 lists.push(`https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts`);
-lists.push(`https://mirror1.malwaredomains.com/files/justdomains`);
+#lists.push(`https://mirror1.malwaredomains.com/files/justdomains`);
 lists.push(`http://sysctl.org/cameleon/hosts`);
 lists.push(`https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt`);
 lists.push(`https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt`);
