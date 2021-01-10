@@ -1,7 +1,7 @@
 ECHO OFF
 git pull
 
-REM npm i
+call npm i
 node "./src/merge.js"
 
 git add .
