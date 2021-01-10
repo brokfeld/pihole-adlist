@@ -10,47 +10,54 @@ const whitelistEndsWith = require(`${__dirname}/whitelistEndsWith.js`);
   let domainsArray = [];
 
   for (let i = 0; i < lists.length; i++) {
+
     let counter = 0;
     const list = lists[i];
     console.log(list);
-    const content = await axios.get(list);
-    const lines = content.data.split(`\n`);
 
-    for (let j = 0; j < lines.length; j++) {
-      
-      let line = lines[j].trim();
-      if (!line.startsWith(`#`)) {
-        if (line !== ``) {
+    try {
 
-          // removes trash before and behind the line
-          if(line.includes(` `)){
-            line = line.split(` `)[1].trim();
-          }
+      const content = await axios.get(list);
+      const lines = content.data.split(`\n`);
+
+      for (let j = 0; j < lines.length; j++) {
+
+        let line = lines[j].trim();
+        if (!line.startsWith(`#`)) {
+          if (line !== ``) {
+
+            // removes trash before and behind the line
+            if (line.includes(` `)) {
+              line = line.split(` `)[1].trim();
+            }
 
             // check whitlists
-          let lineInWhitelist = false;
-          for (let k = 0; k < whitelist.length; k++) {
-            const entry = whitelist[k];
-            if(line === entry){
-              lineInWhitelist = true;
-              break;
+            let lineInWhitelist = false;
+            for (let k = 0; k < whitelist.length; k++) {
+              const entry = whitelist[k];
+              if (line === entry) {
+                lineInWhitelist = true;
+                break;
+              }
             }
-          }
-          for (let k = 0; k < whitelistEndsWith.length; k++) {
-            const entry = whitelistEndsWith[k];
-            if(line.endsWith(entry)){
-              lineInWhitelist = true;
-              break;
+            for (let k = 0; k < whitelistEndsWith.length; k++) {
+              const entry = whitelistEndsWith[k];
+              if (line.endsWith(entry)) {
+                lineInWhitelist = true;
+                break;
+              }
             }
+            if (!lineInWhitelist) {
+              domainsArray.push(line);
+            }
+            counter++;
           }
-          if(!lineInWhitelist){
-            domainsArray.push(line);
-          }
-          counter++;
         }
       }
+      console.log(`  ${counter} domains`);
+    } catch (error) {
+      console.log(error.message);
     }
-    console.log(`  ${counter} domains`);
   }
 
   // add blacklist
