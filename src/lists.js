@@ -12,4 +12,7 @@ lists.push(`https://raw.githubusercontent.com/RPiList/specials/master/Blockliste
 lists.push(`https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/notserious`);
 lists.push(`https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/android-tracking.txt`);
 
+//CNAME Trackers
+lists.push(`https://raw.githubusercontent.com/AdguardTeam/cname-trackers/master/combined_disguised_trackers_justdomains.txt`);
+
 module.exports = lists;
